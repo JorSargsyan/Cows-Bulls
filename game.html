@@ -5,72 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <style>
-
-        *{
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-    #wrapper{
-        float:left;
-        font-weight: bold;
-        font-size: 20px;
-        color: white;
-        height: auto;
-    }
-
-    .inputs{
-        border: Green 2px solid;
-        height: 30px;
-        width: 200px;
-        display: block;
-        margin: 15px;
-        font-size: 20px;
-    }
-
-    button{
-        margin: 15px;
-        height: 30px;
-        width: 200px;
-        background:green;
-        border: none;
-        color: white;
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    button:hover{
-        cursor: pointer;
-    }
-
-    #answer{
-        height: 275px;
-        font-size: 15px;
-    }
-
-    .info{
-        border: 2px green Solid;
-      height: auto;
-      padding: 5px;
-      font-size: 20px;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <script src = "jquery.min.js"></script>
 </head>
 <body>
-
+    <div class="main">
+            <h1>Bulls & Cows</h1>
             <div id = "wrapper">
+                <button class= "btn tog-btn">Help</button>
                 <input id = "input2" class= "inputs" type="number" placeholder="Your Number">
-                <button id= "btn">Ask</button>
-                <textarea placeholder="Computer`s Answer" class= "inputs" name="" id="answer" cols="30" rows="10"></textarea>
+                <button id = "ask" class= "btn">Ask</button>
+                <button id = "startNewGame" class = "btn">Start New Game</button>
+                <div   id="answer" cols="30" rows="10">
+                    <p>"Computer`s Answer"</p>
+                    
+                </div>
             </div>
             <div class="info">
-                <h1>Bulls & Cows</h1>
-                <p>Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls or Bulls and Cleots) is an old code-breaking mind or paper and pencil game for two or more players, predating the similar commercially marketed board game Mastermind.
+                
+                <p class = "help">Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls or Bulls and Cleots) is an old code-breaking mind or paper and pencil game for two or more players, predating the similar commercially marketed board game Mastermind.
 
-                    It is a game with numbers or words that may date back a century or more. It is played by two opponents.</p>
+                    It is a game with numbers or words that may date back a century or more. It is played by two opponents.
 
-                <p>
+               
                     The numerical version of the game is usually played with 4 digits, but can also be played with 3 or any other number of digits.
 
                     On a sheet of paper, the players each write a 4-digit secret number. The digits must be all different. Then, in turn, the players try to guess their opponent's number who gives the number of matches. If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows". Example:
@@ -87,92 +44,7 @@
                     It is proven that any number could be solved within seven turns. Minimal average game length is 26274/5040=5.2131 turns
                 </p>
             </div>
-
-
-    <script>
-
-    class Game{
-        // is creating Random numbers from a to b
-        static Rand(a,b){
-            return Math.floor(Math.random()*(b-a+1)+a);
-        }
-
-
-        //is checking that created numbers are not existing
-        static MakingTheRand(){
-
-        var sum = "";
-        for (var i=0;i<4;i++){
-
-            do{
-                var num = Game.Rand(0,9);
-            }
-            while(sum.indexOf(num)>=0);
-            sum += num; 
-           
-        }
-        return sum;
-        
-        }
-        
-        //analizing cows & bulls
-        static Analize(make,attempt){
-        Game.bulls =0;
-        Game.cows = 0;
-        for (var i=0;i<4;i++)
-        {
-            if(make[i]==attempt[i])
-            {
-                Game.bulls++;
-            }
-            else if(make.indexOf(attempt[i])>=0){
-                Game.cows++;
-            }
-            }
-        }
-
-        // onclick handler
-        static handler(){
-            var btn = document.getElementById("btn");
-            btn.addEventListener("click",Game.Start);
-        }
-
-
-        // Start playing method
-       static Start (){
-           var input1 = document.getElementById("input1");
-           var input2 = document.getElementById("input2");
-           var answer = document.getElementById("answer");
-            
-                var c = input2.value;
-                if( c.length != 4)
-                {
-                    alert("Number is not valid");
-                }
-                else{
-                    Game.Analize(m,c);
-                    var s =  ` Bulls = ${Game.bulls} Cows = ${Game.cows} `;
-                    if(c == m){
-                        alert("You Win!!!");
-                        b = m;
-                    };
-                    answer.innerHTML += `${c} ${s}`;
-                    c = "";
-                    console.log(`${m} ${c} ${s}`);
-                }
-            
-
-    }
-    }
-
-
-                    Game.bulls = 0;
-                    Game.cows = 0;
-                    var m =Game.MakingTheRand();
-                    Game.handler();
-                    
-
-
-    </script>
+        </div>
+    <script src = "script.js"></script>
 </body>
 </html>

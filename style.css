@@ -1,0 +1,92 @@
+
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI light';
+        }
+
+
+.main{
+     background : url("https://userscontent2.emaze.com/images/e2300b4b-b116-4eb1-ac4c-c91cc6f6ec27/3b974acce0399a541d294f7a085869b6.jpg");
+     background-repeat : no-repeat;
+     background-size : cover;
+    min-height:1200px;
+     height : auto;
+     background-attachment: fixed;
+ }
+
+h1{
+     padding-top : 25px;
+     text-align: center;
+     font-size : 55px;
+     font-weight: bold;
+     color : white;
+}
+
+#wrapper{
+    display : flex;
+    margin : 0 auto;
+    flex-direction: column;
+    padding:25px 35% 100px;
+}
+
+
+#input2{
+    
+    height: 50px;
+    text-align: center;
+    border :none;
+    background : rgba(255, 255, 255, 0);
+    color : white;
+    font-size : 55px;
+}
+
+#input2:focus{
+    outline : none;
+}
+
+.btn{
+    
+    margin : 25px 0;
+    background : yellow;
+    border : none;
+    color : white;
+    font-size : 55px;
+    background-color : black;
+}
+
+button:focus{
+    outline : none;
+}
+
+#answer{
+    text-align: center;
+    border :none;
+    background : rgba(255, 255, 255, 0);
+    color : white;
+    font-size : 45px;
+}
+
+#startNewGame{
+    display: none;
+}
+
+button:active{
+    background-color : gray;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.info{
+    float: left;
+}
+
+
+.help{
+    display : none;
+    color:white;
+    font-size : 20px;
+
+}
