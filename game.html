@@ -5,46 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <script src = "jquery.min.js"></script>
 </head>
 <body>
-    <div class="main">
-            <h1>Bulls & Cows</h1>
-            <div id = "wrapper">
-                <button class= "btn tog-btn">Help</button>
-                <input id = "input2" class= "inputs" type="number" placeholder="Your Number">
-                <button id = "ask" class= "btn">Ask</button>
-                <button id = "startNewGame" class = "btn">Start New Game</button>
-                <div   id="answer" cols="30" rows="10">
-                    <p>"Computer`s Answer"</p>
-                    
+    <div >
+        <h1 class="center-align">Bulls & Cows</h1>
+        <div class="row">
+            <div class="col s4">
+                <div class="info">
+
+                    <p class = "help">Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls or Bulls and Cleots) is an old code-breaking mind or paper and pencil game for two or more players, predating the similar commercially marketed board game Mastermind.
+
+                        It is a game with numbers or words that may date back a century or more. It is played by two opponents.
+
+
+                        The numerical version of the game is usually played with 4 digits, but can also be played with 3 or any other number of digits.
+
+                        On a sheet of paper, the players each write a 4-digit secret number. The digits must be all different. Then, in turn, the players try to guess their opponent's number who gives the number of matches. If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows". Example:
+
+                        Secret number: 4271
+                        Opponent's try: 1234
+                        Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)
+                        The first one to reveal the other's secret number wins the game. As the first player has a logical advantage, the game can be balanced over multiple games by alternating the right to go first, or over a single game by granting the second player an equal number of guesses, possibly resulting in a tie.
+
+                        The game may also be played by two teams of 2–3 players, with the team members discussing their strategy before selecting a move.
+
+                        A computer program moo, written in 1970 by J. M. Grochow at MIT in the PL/I computer language for the Multics operating system, was amongst the first Bulls and Cows computer implementations, inspired by a similar program written by Frank King in 1968 and running on the Cambridge University mainframe. Because the game has simple rules, while it is difficult and entertaining, there are many computer variants; it is often included in telephones and PDAs.
+
+                        It is proven that any number could be solved within seven turns. Minimal average game length is 26274/5040=5.2131 turns
+                    </p>
                 </div>
             </div>
+        <div class="col s4 center-align ">
+                <input id = "input2" class= "input-field " type="number" placeholder="Your Number">
+                <div >
+                        <button class="light-green darken-2 tog-btn  btn">Help</button>
+                        <button class =  " cyan darken-2 btn" id = "ask" >Ask</button>
+                        <button  class= "red darken-2 btn" id = "startNewGame">New Game</button>
+                        <div   id="answer" >
+                            <p>"Computer`s Answer"</p>
+                            <p id="answers"></p>
+                        </div>
+                    </div>
+
+        </div>
+
+        <div class="col s4">
             <div class="info">
-                
-                <p class = "help">Bulls and Cows (also known as Cows and Bulls or Pigs and Bulls or Bulls and Cleots) is an old code-breaking mind or paper and pencil game for two or more players, predating the similar commercially marketed board game Mastermind.
-
-                    It is a game with numbers or words that may date back a century or more. It is played by two opponents.
-
-               
-                    The numerical version of the game is usually played with 4 digits, but can also be played with 3 or any other number of digits.
-
-                    On a sheet of paper, the players each write a 4-digit secret number. The digits must be all different. Then, in turn, the players try to guess their opponent's number who gives the number of matches. If the matching digits are in their right positions, they are "bulls", if in different positions, they are "cows". Example:
-
-                    Secret number: 4271
-                    Opponent's try: 1234
-                    Answer: 1 bull and 2 cows. (The bull is "2", the cows are "4" and "1".)
-                    The first one to reveal the other's secret number wins the game. As the first player has a logical advantage, the game can be balanced over multiple games by alternating the right to go first, or over a single game by granting the second player an equal number of guesses, possibly resulting in a tie.
-
-                    The game may also be played by two teams of 2–3 players, with the team members discussing their strategy before selecting a move.
-
-                    A computer program moo, written in 1970 by J. M. Grochow at MIT in the PL/I computer language for the Multics operating system, was amongst the first Bulls and Cows computer implementations, inspired by a similar program written by Frank King in 1968 and running on the Cambridge University mainframe. Because the game has simple rules, while it is difficult and entertaining, there are many computer variants; it is often included in telephones and PDAs.
-
-                    It is proven that any number could be solved within seven turns. Minimal average game length is 26274/5040=5.2131 turns
+                <p class="help">
+                    Быки и коровы — логическая игра, в ходе которой за несколько попыток один из игроков должен определить, что задумал другой игрок. Варианты игры могут зависеть от типа отгадываемой последовательности — это могут быть числа, цвета, пиктограммы или слова. После каждой попытки задумавший игрок выставляет «оценку», указывая количество угаданного без совпадения с их позициями (количество «коров») и полных совпадений (количество «быков»). Роли участников игры не равнозначны — угадывающий должен анализировать сделанные попытки и полученные оценки, то есть его роль активна. Его партнёр лишь сравнивает очередной вариант с задуманным и выставляет оценку по формальным правилам, то есть его роль пассивна. Для уравновешивания ролей одновременно играют две встречные партии.
+                    В классическом варианте игра рассчитана на двух игроков. Каждый из игроков задумывает и записывает тайное 4-значное число с неповторяющимися цифрами[1]. Игрок, который начинает игру по жребию, делает первую попытку отгадать число. Попытка — это 4-значное число с неповторяющимися цифрами, сообщаемое противнику. Противник сообщает в ответ, сколько цифр угадано без совпадения с их позициями в тайном числе (то есть количество коров) и сколько угадано вплоть до позиции в тайном числе (то есть количество быков). Например:
+                    Задумано тайное число «3219».
+                    Попытка: «2310».
+                    Результат: две «коровы» (две цифры: «2» и «3» — угаданы на неверных позициях) и один «бык» (одна цифра «1» угадана вплоть до позиции).
+                    Игроки делают попытки угадать по очереди. Побеждает тот, кто угадает число первым, при условии, что он не начинал игру. Если же отгадавший начинал игру — его противнику предоставляется последний шанс угадать последовательность.
+                    При игре против компьютера игрок вводит комбинации одну за другой, пока не отгадает всю последовательность.
                 </p>
             </div>
         </div>
+        </div>
+    </div>
     <script src = "script.js"></script>
 </body>
 </html>
