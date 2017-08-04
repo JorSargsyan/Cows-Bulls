@@ -49,7 +49,7 @@ class Game{
         counter = 0;
         Game.bulls = 0;
         Game.cows = 0;
-        answer.innerHTML = "<p>Computer`s Answer</p>";
+
         input2.value = "";
         m = Game.MakingTheRand();
         Game.handler();
@@ -82,10 +82,8 @@ class Game{
             Game.Analize(m,c);
             if(counter >=10){
                 var btn2 = document.getElementById("startNewGame");
-                alert("You lose,the Number was "+m+".Press 'Start New Game' Button") ;
+                alert("You lose,the Number was "+m+"") ;
                 location.reload();
-                answer.innerHTML = "<p>Computer`s Answer</p>";
-                input2.value = "";
             }
             else{
                 var s =  ` Bulls = ${Game.bulls} Cows = ${Game.cows} `;
@@ -94,7 +92,7 @@ class Game{
                     b = m;
                     location.reload();
                 };
-                answers.innerHTML += `${c} ${s}`;
+                answers.innerHTML += ` <p> ${c} ${s} <p/>` ;
                 c = "";
                 console.log(`${m} ${c} ${s}`);
                 console.log(counter)
